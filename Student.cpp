@@ -17,10 +17,10 @@ char* Student::getLast(){
   return last;
 }
 
-int Student::getId(){
+int& Student::getId(){
   return id;
 }
 
-double Student::getGPA(){
+double& Student::getGPA(){
   return GPA;
 }

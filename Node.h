@@ -12,8 +12,9 @@ class Node{
   Node();
   ~Node();
   Node* getNext();
-  void setValue(Student* newstudent)
+  void setValue(Student* newstudent);
   void setNext(Node* newnext);
+  Student* getValue();
 private:
   Student* student;
   Node* next;

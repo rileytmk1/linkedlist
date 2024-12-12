@@ -23,3 +23,7 @@ Node* Node::getNext(){
 void Node::setNext(Node* newnext){
   next = newnext;
 }
+
+Student* Node::getValue(){
+  return student;
+}
