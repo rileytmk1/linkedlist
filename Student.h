@@ -11,7 +11,7 @@ class Student {
   Student();
   char* getFirst();
   char* getLast();
-  int& getId();
+  int& getId(); 
   double& getGPA();
  private:
   char first [50];

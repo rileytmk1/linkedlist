@@ -18,32 +18,50 @@ int main()
   test->getId() = 459535;
   test->getGPA() = 4.00;
 
+  Student* test2 = new Student();
+  strcpy(test2->getFirst(), "Sehaj");
+  strcpy(test2->getLast(), "Bolina");
+  test2->getId() = 494949;
+  test2->getGPA() = 3.33;
+
+  Student* test3 = new Student();
+  strcpy(test3->getFirst(), "Shyam");
+  strcpy(test3->getLast(), "Ravidath");
+  test3->getId() = 495549;
+  test3->getGPA() = 2.78;
+  
   add(test);
 
+  print(head);
+
+  add(test2);
+  print(head);
+
+  add(test3);
   print(head);
 }
 
 
 void add(Student* newstudent){
   Node* current = head;
-  if (current == NULL) {
+  if (current == NULL) { //if linked list is empty, head becomes new node
     head = new Node();
-    head->setValue(newstudent);
+    head->setValue(newstudent); //set the node to the student
   }
   else {
-    while (current->getNext() != NULL) {
+    while (current->getNext() != NULL) { //Go through the list until last node 
       current = current->getNext();
     }
-    current->setNext(new Node());
-    current->getNext()->setValue(newstudent);
+    current->setNext(new Node()); //last node point to new node
+    current->getNext()->setValue(newstudent); //set value of added node
   }
 }
 
 void print(Node* next) {
-  if (next == head) {
-    cout << "list:";
+  if (next == head) { 
+    cout << "list: ";
   }
-  if (next != NULL) {
+  if (next != NULL) { //output list until end of list
     Student* student = next->getValue();
     cout << "First: " << student->getFirst() << ", ";
     cout << "Last: " << student->getLast() << ", ";
