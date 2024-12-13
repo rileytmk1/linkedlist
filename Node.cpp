@@ -3,7 +3,8 @@
 
 using namespace std;
 
-Node::Node(){
+Node::Node(Student* newstudent){
+  student = newstudent;
   next = NULL;
 }
 
@@ -12,9 +13,11 @@ Node::~Node() {
   next = NULL;
 }
 
-void Node::setValue(Student* newstudent){
+/*
+void Node::setValue(Student* newstudent){ //don't need this since its in the constructor
   student = newstudent;
 }
+*/
 
 Node* Node::getNext(){
   return next;
@@ -24,6 +27,6 @@ void Node::setNext(Node* newnext){
   next = newnext;
 }
 
-Student* Node::getValue(){
+Student* Node::getStudent(){
   return student;
 }

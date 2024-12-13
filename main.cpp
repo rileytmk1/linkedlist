@@ -45,15 +45,15 @@ int main()
 void add(Student* newstudent){
   Node* current = head;
   if (current == NULL) { //if linked list is empty, head becomes new node
-    head = new Node();
-    head->setValue(newstudent); //set the node to the student
+    head = new Node(newstudent); //set the node to the student
+    //head->setValue(newstudent);
   }
   else {
     while (current->getNext() != NULL) { //Go through the list until last node 
       current = current->getNext();
     }
-    current->setNext(new Node()); //last node point to new node
-    current->getNext()->setValue(newstudent); //set value of added node
+    current->setNext(new Node(newstudent)); //last node point to new node and sets value
+    //current->getNext()->setValue(newstudent); 
   }
 }
 
@@ -62,7 +62,7 @@ void print(Node* next) {
     cout << "list: ";
   }
   if (next != NULL) { //output list until end of list
-    Student* student = next->getValue();
+    Student* student = next->getStudent();
     cout << "First: " << student->getFirst() << ", ";
     cout << "Last: " << student->getLast() << ", ";
     cout << "ID: " << student->getId() << ", ";

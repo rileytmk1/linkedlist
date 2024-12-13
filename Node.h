@@ -9,12 +9,11 @@ using namespace std;
 
 class Node{
  public:
-  Node(); //constructor
+  Node(Student* newstudent); //constructor (accepts student pointer)
   ~Node(); //destructor
   Node* getNext(); //gets next node in the linked list
-  void setValue(Student* newstudent); //sets value of node
   void setNext(Node* newnext); //set the next node
-  Student* getValue(); //get value of node
+  Student* getStudent(); //get value of node
 private:
   Student* student;
   Node* next;
